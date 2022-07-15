@@ -1,12 +1,10 @@
 #/usr/bin/env bash
 
-all: README.md
-
-README.md: guessinggame.sh
+create: guessinggame.sh
 	touch README.md
-	echo "# guessinggame" > README.md
-	echo $$(date) >> README.md
-	echo "  \n" >> README.md
+	echo "_Title_ : **guessing game**" > README.md
+	echo date  $$(date) >> README.md
+	echo "Number of lines : " >> README.md
 	wc -l guessinggame.sh | egrep -o "[0-9]+" >> README.md
-clean:
+del:
 	rm README.md
